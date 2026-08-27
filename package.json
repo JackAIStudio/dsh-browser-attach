@@ -1,0 +1,42 @@
+{
+  "name": "dsh-browser-attach",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DSH plugin: attach to the user's real Chrome over CDP (login state reused). Registers browser_* tools.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "browserctl.mjs",
+    "cordis.patch.yml",
+    "README.md",
+    "skill"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackAIStudio/dsh-browser-attach.git"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "chrome",
+    "cdp",
+    "browser",
+    "attach"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  }
+}
