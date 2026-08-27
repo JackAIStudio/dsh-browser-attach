@@ -26,20 +26,22 @@ DeepSeek Harness 插件：通过 CDP **附加到用户正在用的真实 Chrome*
 - `cordis.patch.yml` — 装进 web profile 的 bundle 补丁
 - `skill/SKILL.md` — Agent 使用说明（安装到 `~/.agents/skills/browser-attach/`）
 
-## 安装（本机 file: 包）
+## 安装
 
-在 `~/.dsh/profiles/web/package.json` 的 `dependencies` 和 `dsh.profile.bundles` 里加入本包，然后：
-
-```bash
-pnpm install --dir ~/.dsh/profiles/web
-```
-
-重启 `dsh web` 后工具生效。配套 skill：
+源码在 `~/Documents/dshspace/plugins/dsh-browser-attach`。
 
 ```bash
-mkdir -p ~/.agents/skills/browser-attach
-cp skill/SKILL.md ~/.agents/skills/browser-attach/SKILL.md
+# 开发机
+dsh plugin --profile web add link:$HOME/Documents/dshspace/plugins/dsh-browser-attach
+
+# 新电脑
+dsh plugin --profile web add github:JackAIStudio/dsh-browser-attach
+
+# 配套 skill（软链到仓内 skill/，不要再复制一份）
+ln -sfn "$HOME/Documents/dshspace/plugins/dsh-browser-attach/skill" "$HOME/.agents/skills/browser-attach"
 ```
+
+重启 `dsh web` 后工具生效。
 
 CLI 回退（与插件走同一条 daemon）：
 
