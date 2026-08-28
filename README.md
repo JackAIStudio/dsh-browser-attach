@@ -41,7 +41,7 @@ dsh plugin --profile web add github:JackAIStudio/dsh-browser-attach
 ln -sfn "$HOME/Documents/dshspace/plugins/dsh-browser-attach/skill" "$HOME/.agents/skills/browser-attach"
 ```
 
-重启 `dsh web` 后工具生效。
+工具在重启 `dsh web` 后才会注册。**不要自己重启正在跑的进程**；告诉用户。本会话如果还没有这些工具，用下面的 CLI 回退。
 
 CLI 回退（与插件走同一条 daemon）：
 

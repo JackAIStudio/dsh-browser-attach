@@ -7,7 +7,7 @@ description: 通过 CDP 附加到用户真实 Chrome(attach 模式,复用现有�
 
 通过 CDP(Chrome DevTools Protocol)附加到用户**正在使用的真实 Chrome**(调试端口 `127.0.0.1:9222`),所有页面都带用户现有的登录态。这是 attach 模式,不是隔离/无头浏览器。
 
-优先使用 DSH 原生工具(插件 `dsh-browser-attach` 注册,重启 `dsh web` 后可用):`browser_doctor` / `browser_tabs` / `browser_open` / `browser_read` / `browser_shot` / `browser_snapshot` / `browser_click` / `browser_type` / `browser_eval` / `browser_wait` / `browser_activate` / `browser_close`。
+优先使用 DSH 原生工具(插件 `dsh-browser-attach` 注册；若本会话看不到这些工具，告诉用户重启 `dsh web` 后才会出现，不要自己重启):`browser_doctor` / `browser_tabs` / `browser_open` / `browser_read` / `browser_shot` / `browser_snapshot` / `browser_click` / `browser_type` / `browser_eval` / `browser_wait` / `browser_activate` / `browser_close`。
 
 本会话如果还看不到这些工具,回退 CLI:`node <本插件目录>/browserctl.mjs <command> ...`(与插件走同一条 daemon 连接)。审计/pid 仍在 `~/.config/browserctl/`。
 
